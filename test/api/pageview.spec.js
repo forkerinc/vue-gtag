@@ -38,7 +38,6 @@ describe("pageview", () => {
     pageview("/");
 
     expect(event).toHaveBeenCalledWith("page_view", {
-      send_page_view: true,
       page_path: "/",
       page_location: "window_location_href_value",
     });
@@ -52,7 +51,6 @@ describe("pageview", () => {
     });
 
     expect(event).toHaveBeenCalledWith("page_view", {
-      send_page_view: true,
       page_title: "about",
       page_path: "/about",
       page_location: "window_location_href_value",
@@ -75,7 +73,6 @@ describe("pageview", () => {
     pageview(router.currentRoute.value);
 
     expect(event).toHaveBeenCalledWith("page_view", {
-      send_page_view: true,
       page_title: "home",
       page_path: "/",
       page_location: "window_location_href_value",
@@ -119,7 +116,6 @@ describe("pageview", () => {
       pageview(router.currentRoute.value);
 
       expect(event).toHaveBeenCalledWith("page_view", {
-        send_page_view: true,
         page_path: "/about",
         page_location: "window_location_href_value",
       });
@@ -149,7 +145,6 @@ describe("pageview", () => {
       pageview(router.currentRoute.value);
 
       expect(event).toHaveBeenCalledWith("page_view", {
-        send_page_view: true,
         page_path: "/about?foo=bar",
         page_location: "window_location_href_value",
       });
@@ -187,7 +182,6 @@ describe("pageview", () => {
       pageview(router.currentRoute.value);
 
       expect(event).toHaveBeenCalledWith("page_view", {
-        send_page_view: true,
         page_path: "/app/about",
         page_location: "window_location_href_value",
       });
@@ -219,7 +213,6 @@ describe("pageview", () => {
       pageview(router.currentRoute.value);
 
       expect(event).toHaveBeenCalledWith("page_view", {
-        send_page_view: true,
         page_path: "/about",
         page_location: "window_location_href_value",
       });
