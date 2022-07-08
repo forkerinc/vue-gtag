@@ -1,7 +1,7 @@
 {
   "name": "vue-gtag",
   "description": "Global Site Tag (gtag.js) plugin for Vue",
-  "version": "0.0.0-development",
+  "version": "2.0.2-beta.0",
   "author": {
     "name": "Matteo Gabriele",
     "email": "m.gabriele.dev@gmail.com"
@@ -12,7 +12,6 @@
     "url": "https://github.com/MatteoGabriele/vue-gtag"
   },
   "scripts": {
-    "commit": "git-cz",
     "clean": "del-cli dist",
     "prebuild": "yarn clean",
     "build": "bili",
@@ -25,13 +24,7 @@
     "coverage:html": "TZ=UTC jest --coverage --coverageReporters=html",
     "coverage:text": "TZ=UTC jest --coverage --coverageReporters=text",
     "coverage:lcov": "TZ=UTC jest --coverage --coverageReporters=lcov",
-    "prepublishOnly": "TZ=UTC yarn lint && yarn test && yarn build",
-    "semantic-release": "semantic-release"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "prepublishOnly": "TZ=UTC yarn lint && yarn test && yarn build"
   },
   "jest": {
     "setupFiles": [
@@ -86,9 +79,7 @@
     "@babel/preset-env": "^7.7.1",
     "babel-eslint": "^10.0.3",
     "bili": "^5.0.5",
-    "commitizen": "^4.0.3",
     "core-js": "^3.10.1",
-    "cz-conventional-changelog": "^3.0.2",
     "del-cli": "^3.0.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.7.0",
@@ -103,7 +94,6 @@
     "regenerator-runtime": "^0.13.7",
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-resolve": "^0.0.1-predev.1",
-    "semantic-release": "^15.13.31",
     "vue": "^3.0.0",
     "vue-router": "^4.0.6",
     "vue-template-compiler": "^2.6.10"
