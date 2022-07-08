@@ -68,7 +68,6 @@ jobs:
           key: v1-yarn-{{ checksum "yarn.lock" }}
       - run: yarn semantic-release
 
-
 workflows:
   version: 2
   workflow:
@@ -103,6 +102,6 @@ workflows:
             branches:
               only:
                 - master
+                - beta
           requires:
             - build
-
