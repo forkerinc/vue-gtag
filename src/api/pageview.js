@@ -35,9 +35,5 @@ export default (param) => {
     template.page_location = window.location.href;
   }
 
-  if (template.send_page_view == null) {
-    template.send_page_view = true;
-  }
-
   event("page_view", template);
 };
