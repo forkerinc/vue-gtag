@@ -9,6 +9,7 @@ import * as utils from "@/utils";
 import * as api from "@/api";
 import addConfiguration from "@/add-configuration";
 import bootstrap from "@/bootstrap";
+import expect from "expect";
 
 MockDate.set("06-03-1997 10:00:00");
 
@@ -32,10 +33,15 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       config: {
         id: 1,
+        params: {
+          gtm_auth: "AUTH_TOKEN",
+          gtm_preview: "env-666",
+          gtm_cookies_win: "x",
+        },
       },
     });
 
-    const url = "https://www.googletagmanager.com/gtag/js?id=1&l=dataLayer";
+    const url = "https://www.googletagmanager.com/gtag/js?id=1&l=dataLayer&gtm_auth=AUTH_TOKEN&gtm_preview=env-666&gtm_cookies_win=x";
 
     expect(utils.load).toHaveBeenCalledWith(url, {
       preconnectOrigin: "https://www.googletagmanager.com",
@@ -50,11 +56,16 @@ describe("boostrap", () => {
       customResourceURL: "foo.com",
       config: {
         id: 1,
+        params: {
+          gtm_auth: "AUTH_TOKEN",
+          gtm_preview: "env-666",
+          gtm_cookies_win: "x",
+        },
       },
     });
 
     expect(utils.load).toHaveBeenCalledWith(
-      "foo.com?id=1&l=dataLayer",
+      "foo.com?id=1&l=dataLayer&gtm_auth=AUTH_TOKEN&gtm_preview=env-666&gtm_cookies_win=x",
       expect.any(Object)
     );
   });
@@ -65,7 +76,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       customPreconnectOrigin: "bar.com",
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -81,7 +97,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       deferScriptLoad: true,
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -104,7 +125,12 @@ describe("boostrap", () => {
 
     localVue.use(VueGtag, {
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -126,7 +152,12 @@ describe("boostrap", () => {
       VueGtag,
       {
         config: {
-          id: 1,
+            id: 1,
+            params: {
+                gtm_auth: "AUTH_TOKEN",
+                gtm_preview: "env-666",
+                gtm_cookies_win: "x",
+            },
         },
       },
       router
@@ -142,7 +173,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       disableScriptLoad: true,
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -160,7 +196,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       onReady: spy,
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -179,7 +220,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       onError: spy,
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 
@@ -194,7 +240,12 @@ describe("boostrap", () => {
     localVue.use(VueGtag, {
       bootstrap: false,
       config: {
-        id: 1,
+          id: 1,
+          params: {
+              gtm_auth: "AUTH_TOKEN",
+              gtm_preview: "env-666",
+              gtm_cookies_win: "x",
+          },
       },
     });
 

@@ -18,20 +18,20 @@ describe("basic", () => {
     expect(localVue.prototype.$gtag).toBeDefined();
     expect(Object.keys(localVue.$gtag)).toMatchInlineSnapshot(`
       Array [
-        "query",
         "config",
-        "optOut",
-        "optIn",
-        "pageview",
-        "screenview",
-        "exception",
-        "linker",
-        "time",
-        "set",
-        "refund",
-        "purchase",
         "customMap",
         "event",
+        "exception",
+        "linker",
+        "optIn",
+        "optOut",
+        "pageview",
+        "purchase",
+        "query",
+        "refund",
+        "screenview",
+        "set",
+        "time",
       ]
     `);
   });
