@@ -33,10 +33,13 @@ export default () => {
     return;
   }
 
-  return load(`${customResourceURL}?id=${config.id}&l=${globalDataLayerName}`, {
-    preconnectOrigin: customPreconnectOrigin,
-    defer: deferScriptLoad,
-  })
+  return load(
+    `${customResourceURL}?id=${config.id}&l=${globalDataLayerName}&gtm_auth=${config.params.gtm_auth}&gtm_preview=${config.params.gtm_preview}&gtm_cookies_win=x`,
+    {
+      preconnectOrigin: customPreconnectOrigin,
+      defer: deferScriptLoad,
+    }
+  )
     .then(() => {
       if (onReady) {
         onReady(window[globalObjectName]);
